@@ -4,20 +4,20 @@ const fs = require('fs')
 
 const config = require('./config.json')
 
-const server = new https.createServer({
-  key: fs.readFileSync('ssl/key.pem'),
-  cert: fs.readFileSync('ssl/cert.pem')
+const server = https.createServer({
+  key: fs.readFileSync(config.certificates.key),
+  cert: fs.readFileSync(config.certificates.cert)
 })
 
 const wss = new WebSocket.Server({ server })
 
-wss.on('connection', function (ws) {
-  ws.on('message', function (message) {
-      ws.send(`ECHO: ${message}`, (error) => {
-          if (error) {
-              console.log(`[SERVER] error: ${error}`)
-          }
-      })
+wss.on('connection', (ws) => {
+  console.log(`[SERVER] connection()`)
+  ws.on('message', (message) => {
+    console.log(`[SERVER] Received: ${message}`)
+    ws.send(`ECHO: ${message}`, (error) => {
+      console.log(`[SERVER] error: ${error}`)
+    })
   })
 })
 
