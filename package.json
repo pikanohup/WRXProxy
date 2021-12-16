@@ -1,0 +1,23 @@
+{
+  "name": "wrxproxy",
+  "version": "1.0.0",
+  "description": "A WebSocket proxy server for WebRandomX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikapikapikachuuu/WRXProxy"
+  },
+  "author": "pika",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-vue": "^8.2.0"
+  }
+}
