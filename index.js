@@ -1,15 +1,9 @@
 const WebSocket = require('ws')
-const https = require('https')
 const fs = require('fs')
 
 const config = require('./config.json')
 
-const server = https.createServer({
-  key: fs.readFileSync(config.certificates.key),
-  cert: fs.readFileSync(config.certificates.cert)
-})
-
-const wss = new WebSocket.Server({ server })
+const wss = new WebSocket.Server({ port: config.port })
 
 wss.on('connection', (ws) => {
   console.log(`[SERVER] connection()`)
@@ -20,5 +14,3 @@ wss.on('connection', (ws) => {
     })
   })
 })
-
-server.listen(config.port)
