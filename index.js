@@ -1,16 +1,8 @@
-const WebSocket = require('ws')
-const fs = require('fs')
+
+const Proxy = require('./lib/proxy')
 
 const config = require('./config.json')
 
-const wss = new WebSocket.Server({ port: config.port })
+const proxy = new Proxy(config)
 
-wss.on('connection', (ws) => {
-  console.log(`[SERVER] connection()`)
-  ws.on('message', (message) => {
-    console.log(`[SERVER] Received: ${message}`)
-    ws.send(`ECHO: ${message}`, (error) => {
-      console.log(`[SERVER] error: ${error}`)
-    })
-  })
-})
+proxy.start()
