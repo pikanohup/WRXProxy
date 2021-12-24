@@ -1,3 +1,13 @@
 {
-  "port": 8888
+  "miner": {
+    "port": 8888
+  },
+  "pool": {
+    "host": "pool.supportxmr.com",
+    "port": 7777
+  },
+  "info": {
+    "wallet": "45se8vKVB6mSU1JD5yMa6MfsShB1rPqBAKAHTQURsYMoHt4ddaEaqSdJRSa2SZYDGaDE7gT6udxdMarDqd1ptyy867eCKDY",
+    "password": "hooraypikachu@gmail.com"
+  }
 }
