@@ -23,7 +23,6 @@ Or use pm2 (recommended):
 npm install -g pm2
 cd WRXProxy
 pm2 start npm --name "cluster debug" -- run start
-
 ```
 (To go further checkout: http://pm2.io/)
 
